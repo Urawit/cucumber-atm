@@ -54,6 +54,7 @@ public class StepDefATM {
         assertThrows(NotEnoughBalanceException.class,
                 () -> atm.withdraw(amount));
     }
+
     @Then("my account balance is {float}")
     public void my_account_balance_is(double balance) {
         assertEquals(balance, atm.getBalance());
@@ -68,6 +69,12 @@ public class StepDefATM {
     public void customer_id_account_balance_is(int id, double balance) {
         assertEquals(balance,
                      bank.getCustomer(id).getAccount().getBalance());
+    }
+
+    // deposit feature
+    @When("I deposit {float} from ATM")
+    public void Deposit(double amount){
+        atm.deposit(amount);
     }
 
 }
