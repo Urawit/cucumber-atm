@@ -1,3 +1,4 @@
+// Urawit Jearrajinda 6410406932
 package ku.atm;
 
 import io.cucumber.java.Before;
@@ -72,9 +73,8 @@ public class StepDefATM {
     }
 
     // deposit feature
-    @When("I deposit {float} from ATM")
+    @When("I deposit {float} into ATM")
     public void Deposit(double amount){
         atm.deposit(amount);
     }
-
 }
